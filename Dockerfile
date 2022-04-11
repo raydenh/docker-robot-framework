@@ -112,7 +112,7 @@ RUN apk update \
     jsonpath-ng \
     jsonpath-rw \
     jsonpath-rw-ext \
-    lxml
+    lxml \
 
 # Install awscli to be able to upload test reports to AWS S3
     awscli==$AWS_CLI_VERSION \
