@@ -58,6 +58,7 @@ COPY bin/chromium-browser.sh /opt/robotframework/bin/chromium-browser
 COPY bin/run-tests-in-virtual-screen.sh /opt/robotframework/bin/
 
 # Install system dependencies
+
 RUN apk update \
   && apk --no-cache upgrade \
   && apk --no-cache --virtual .build-deps add \
@@ -85,6 +86,7 @@ RUN apk update \
     xauth \
     tzdata \
     "xvfb-run~$XVFB_VERSION" \
+    libxslt-dev \
   && mv /usr/lib/chromium/chrome /usr/lib/chromium/chrome-original \
   && ln -sfv /opt/robotframework/bin/chromium-browser /usr/lib/chromium/chrome \
 # FIXME: above is a workaround, as the path is ignored
@@ -107,6 +109,10 @@ RUN apk update \
     robotframework-sshlibrary==$SSH_LIBRARY_VERSION \
     axe-selenium-python==$AXE_SELENIUM_LIBRARY_VERSION \
     PyYAML \
+    jsonpath-ng \
+    jsonpath-rw \
+    jsonpath-rw-ext \
+    lxml
 
 # Install awscli to be able to upload test reports to AWS S3
     awscli==$AWS_CLI_VERSION \
