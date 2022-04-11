@@ -74,6 +74,8 @@ RUN dnf upgrade -y --refresh \
 RUN mv /usr/lib64/chromium-browser/chromium-browser /usr/lib64/chromium-browser/chromium-browser-original \
   && ln -sfv /opt/robotframework/bin/chromium-browser /usr/lib64/chromium-browser/chromium-browser
 
+RUN apk add --update --no-cache g++ gcc libxslt-dev
+
 # Install Robot Framework and associated libraries
 RUN pip3 install \
   --no-cache-dir \
@@ -93,7 +95,11 @@ RUN pip3 install \
   axe-selenium-python==$AXE_SELENIUM_LIBRARY_VERSION \
   PyYAML \
   # Install awscli to be able to upload test reports to AWS S3
-  awscli==$AWS_CLI_VERSION
+  awscli==$AWS_CLI_VERSION \
+  jsonpath-ng \
+  jsonpath-rw \
+  jsonpath-rw-ext \
+  lxml 
 
 # Gecko drivers
 RUN dnf install -y \
