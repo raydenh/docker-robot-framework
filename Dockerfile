@@ -107,6 +107,8 @@ RUN apk update \
     robotframework-requests==$REQUESTS_VERSION \
     robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION \
     robotframework-sshlibrary==$SSH_LIBRARY_VERSION \
+    robotframework-jsonlibrary \
+    robotframework-csvlib \
     axe-selenium-python==$AXE_SELENIUM_LIBRARY_VERSION \
     PyYAML \
     jsonpath-ng \
