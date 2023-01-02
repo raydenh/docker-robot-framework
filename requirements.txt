@@ -1,0 +1,15 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-pabot
+jsonpath-ng
+jsonpath-rw
+jsonpath-rw-ext
+robotframework-csvlib
+robotframework-imaplibrary
+robotframework-jsonlibrary
+robotframework-pythonlibcore
+robotframework-requests
+robotframework-robocop
+selenium
+robotframework-sshlibrary
+lxml

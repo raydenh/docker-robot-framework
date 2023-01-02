@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /usr/lib/chromium/chromium-original --disable-gpu --no-sandbox "$@"
